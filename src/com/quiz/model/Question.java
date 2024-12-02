@@ -1,6 +1,6 @@
 package com.quiz.model;
 public class Question{
-   private int id;
+  private int id;
   private String question;
   private String option1;
   private String option2;
@@ -25,9 +25,8 @@ public class Question{
 
 
   public String showQuestion(){
-  String data =""+
+  String data ="----------------------------------------\n"+
   "Id: "+this.id +" \n"+
-"----------------------------------------\n"+
   "Ques"+this.id+": "+this .question +" \n"+
   "a:: "+this.option1+" \n"+
   "b:: "+this.option2+" \n"+

@@ -1,11 +1,13 @@
 package com.quiz.service;
 import java.util.Scanner;
-
 import com.quiz.model.*;
+
  public class Playground {
   private Question question[]=new Question[5];
   private String userAnswer[]=new String[5];
-    private  void setQuestion(){
+  
+  	  
+      public void setQuestion(){
     
      question[0]=new Question( 1, "byte size ", "1","2","4","8" ,"1");
      question[1]=new Question(2, "short size ", "1","2","4","8" ,"2");
@@ -15,7 +17,7 @@ import com.quiz.model.*;
            
   }
   
-  private  void quizPlayer(){
+    public void quizPlayer(){
      setQuestion();
      int i=0;
       for(Question ques:question){
@@ -25,13 +27,12 @@ import com.quiz.model.*;
          System.out.println("----------------------------------------");
          System.out.println("your answer: ");
          userAnswer[i++]=sc.nextLine();  
-         
-          
+
       }  
      
   }
   
-  private  int getScore(){
+   public int getScore(){
    
    int score=0;
    int i=0;
@@ -49,10 +50,12 @@ import com.quiz.model.*;
     
     quizPlayer();
     int s=getScore();
-    if(s==question.length){
-     return "Congratulation! you have win the quiz. Your score is "+s*20+" out of 100"; 
+    float pers=(s*100/question.length);
+      if(pers>=60){
+    	
+     return "Congratulation! you have win the quiz. Your score is "+pers+"% out of 100"; 
     }else{
-      return "Sorry! you have lose the quiz. Your score is "+s*20+" out of 100";
+      return "Sorry! you have lose the quiz. Your score is "+pers+"% out of 100";
     }
   }
 
@@ -63,6 +66,6 @@ public void viewAnswer() {
 		System.out.println(q.displayAnswer());
 	}
 }
-   
-  
+
+
 }
